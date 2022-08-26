@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">WeatherGo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="refresh">refresh</string>
+    <string name="clear_sky">clear sky</string>
+    <string name="fergana">Fergana</string>
+    <string name="_37">37°</string>
+</resources>

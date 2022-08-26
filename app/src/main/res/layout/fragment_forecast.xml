@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    app:layoutDescription="@xml/fragment_forecast_scene"
+    tools:context="uz.os3ketchup.fragments.ForecastFragment">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/materialToolbar"
+        android:layout_width="match_parent"
+        android:background="@color/blue_500"
+        android:layout_height="?attr/actionBarSize"
+        android:soundEffectsEnabled="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_back" />
+
+    <TextView
+        android:id="@+id/tv_toolbar_title"
+        android:layout_width="0.1dp"
+        android:layout_height="0.1dp"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:text="Forecast 5 days"
+        android:textColor="@color/light_blue_25"
+        android:textSize="@dimen/_18ssp"
+        app:layout_constraintBottom_toBottomOf="@id/materialToolbar"
+        app:layout_constraintLeft_toLeftOf="@id/materialToolbar"
+        app:layout_constraintRight_toRightOf="@id/materialToolbar"
+        app:layout_constraintTop_toTopOf="@id/materialToolbar" />
+
+    <TextView
+        android:id="@+id/tv_title_forecast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_36sdp"
+        android:fontFamily="@font/poppins"
+        android:text="Forecast 5 days"
+        android:textColor="@color/light_blue_25"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/materialToolbar" />
+
+    <TextView
+        android:id="@+id/tv_today"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="YESTERDAY"
+        android:textColor="@color/light_blue_25"
+        android:textSize="12sp"
+        android:layout_marginTop="@dimen/_48sdp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/tv_tomorrow"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_forecast"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <TextView
+        android:id="@+id/tv_tomorrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="NOW"
+        android:textColor="@color/light_blue_25"
+        android:textSize="12sp"
+        android:layout_marginTop="@dimen/_48sdp"
+        app:layout_constraintLeft_toRightOf="@id/tv_today"
+        app:layout_constraintRight_toLeftOf="@id/tv_after_tomorrow"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_forecast"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <TextView
+        android:id="@+id/tv_after_tomorrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="TOMORROW"
+        android:layout_marginTop="@dimen/_48sdp"
+        android:textColor="@color/light_blue_25"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toRightOf="@id/tv_tomorrow"
+        app:layout_constraintRight_toLeftOf="@id/tv_4_day"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_forecast"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <TextView
+        android:id="@+id/tv_4_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="18.08.2022"
+        android:textColor="@color/light_blue_25"
+        android:textSize="12sp"
+        android:layout_marginTop="@dimen/_48sdp"
+        app:layout_constraintLeft_toRightOf="@id/tv_after_tomorrow"
+        app:layout_constraintRight_toLeftOf="@id/tv_5_day"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_forecast"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <TextView
+        android:id="@+id/tv_5_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="19.08.2022"
+        android:textColor="@color/light_blue_25"
+        android:textSize="12sp"
+        android:layout_marginTop="@dimen/_48sdp"
+        app:layout_constraintLeft_toRightOf="@id/tv_4_day"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_forecast"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <ImageView
+        android:id="@+id/iv_today"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/clear_sky"
+        app:layout_constraintBottom_toTopOf="@id/tv_temp_today"
+        app:layout_constraintLeft_toLeftOf="@id/tv_today"
+        app:layout_constraintRight_toRightOf="@id/tv_today"
+        app:layout_constraintTop_toBottomOf="@id/tv_today" />
+
+    <ImageView
+        android:id="@+id/iv_tomorrow"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/clear_sky"
+        app:layout_constraintBottom_toTopOf="@id/tv_temp_tomorrow"
+        app:layout_constraintLeft_toLeftOf="@id/tv_tomorrow"
+        app:layout_constraintRight_toRightOf="@id/tv_tomorrow"
+        app:layout_constraintTop_toBottomOf="@id/tv_tomorrow" />
+
+    <ImageView
+        android:id="@+id/iv_after_tomorrow"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/clear_sky"
+        app:layout_constraintBottom_toTopOf="@id/tv_temp_after_tomorrow"
+        app:layout_constraintLeft_toLeftOf="@id/tv_after_tomorrow"
+        app:layout_constraintRight_toRightOf="@id/tv_after_tomorrow"
+        app:layout_constraintTop_toBottomOf="@id/tv_after_tomorrow" />
+
+    <ImageView
+        android:id="@+id/iv_4_day"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/clear_sky"
+        app:layout_constraintBottom_toTopOf="@id/tv_temp_4_day"
+        app:layout_constraintLeft_toLeftOf="@id/tv_4_day"
+        app:layout_constraintRight_toRightOf="@id/tv_4_day"
+        app:layout_constraintTop_toBottomOf="@id/tv_4_day"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/iv_5_day"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/clear_sky"
+        app:layout_constraintBottom_toTopOf="@id/tv_temp_5_day"
+        app:layout_constraintLeft_toLeftOf="@id/tv_5_day"
+        app:layout_constraintRight_toRightOf="@id/tv_5_day"
+        app:layout_constraintTop_toBottomOf="@id/tv_5_day" />
+
+    <TextView
+        android:id="@+id/tv_temp_today"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="37 °C"
+        android:textColor="@color/light_blue_25"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/iv_today"
+        app:layout_constraintRight_toRightOf="@id/iv_today"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/tv_temp_tomorrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="37 °C"
+        android:textColor="@color/light_blue_25"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/iv_tomorrow"
+        app:layout_constraintRight_toRightOf="@id/iv_tomorrow"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/tv_temp_after_tomorrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="37 °C"
+        android:textColor="@color/light_blue_25"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/iv_after_tomorrow"
+        app:layout_constraintRight_toRightOf="@id/iv_after_tomorrow"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/tv_temp_4_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="37 °C"
+        android:textColor="@color/light_blue_25"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/iv_4_day"
+        app:layout_constraintRight_toRightOf="@id/iv_4_day"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/tv_temp_5_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="37 °C"
+        android:textColor="@color/light_blue_25"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/iv_5_day"
+        app:layout_constraintRight_toRightOf="@id/iv_5_day"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

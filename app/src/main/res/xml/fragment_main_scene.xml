@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000">
+       <KeyFrameSet>
+           <KeyAttribute
+               motion:motionTarget="@+id/iv_condition_weather"
+               motion:framePosition="90"
+               android:alpha="0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/tv_city"
+               motion:framePosition="90"
+               android:alpha="0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/tv_temperature"
+               motion:framePosition="90"
+               android:alpha="0" />
+       </KeyFrameSet>
+        <OnSwipe />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+
+
+        <Constraint
+            android:id="@+id/iv_condition_weather"
+            android:layout_width="0.1dp"
+            android:layout_height="0.1dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintVertical_bias="0"
+            motion:layout_constraintTop_toBottomOf="@id/main_toolbar"
+            motion:layout_constraintLeft_toLeftOf="parent"
+            motion:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="@dimen/_24sdp" />
+        <Constraint
+            android:id="@+id/tv_city"
+            android:layout_width="0.dp"
+            android:layout_height="0.1dp"
+            motion:layout_constraintRight_toRightOf="parent"
+            motion:layout_constraintLeft_toLeftOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/iv_condition_weather" />
+        <Constraint
+            android:id="@+id/iv_humidity"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            motion:layout_constraintTop_toBottomOf="@id/tv_nominal_remaining_daylight"
+            motion:layout_constraintLeft_toLeftOf="parent"
+            motion:layout_constraintRight_toLeftOf="@id/tv_wind_speed_main"
+            android:layout_marginTop="36dp" />
+        <Constraint
+            android:id="@+id/iv_wind_speed_main"
+            motion:layout_constraintLeft_toRightOf="@id/iv_humidity"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            motion:layout_constraintTop_toBottomOf="@id/tv_nominal_remaining_daylight"
+            motion:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="36dp" />
+        <Constraint
+            android:id="@+id/tv_humidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            motion:layout_constraintTop_toBottomOf="@id/iv_humidity"
+            motion:layout_constraintLeft_toLeftOf="@id/iv_humidity"
+            motion:layout_constraintRight_toRightOf="@id/iv_humidity" />
+        <Constraint
+            android:id="@+id/tv_wind_speed_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            motion:layout_constraintTop_toBottomOf="@id/iv_wind_speed_main"
+            motion:layout_constraintLeft_toLeftOf="@id/iv_wind_speed_main"
+            motion:layout_constraintRight_toRightOf="@id/iv_wind_speed_main" />
+        <Constraint
+            android:id="@+id/btn_5_day"
+            android:elevation="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/tv_humidity"
+            motion:layout_constraintRight_toRightOf="parent"
+            motion:layout_constraintLeft_toLeftOf="parent" />
+        <Constraint
+            android:id="@+id/tv_temperature"
+            android:layout_width="0.1sp"
+            android:layout_height="0.1sp"
+            motion:layout_constraintTop_toBottomOf="@id/tv_city"
+            motion:layout_constraintLeft_toLeftOf="parent"
+            motion:layout_constraintRight_toRightOf="parent" />
+
+
+    </ConstraintSet>
+</MotionScene>
